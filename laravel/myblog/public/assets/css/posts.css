@@ -1,12 +1,30 @@
 body
 {
     background: linear-gradient(#e66465, #9198e5);
+    background-repeat: no-repeat;
+    background-position: center;
     color: #00539CFF;
     max-width: 720px;
     margin: auto;
     font-family: sans-serif;
 }
+h1 {
+    font-size: 72px;
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
 article + article{
     border-top: 2px solid #cdd;
+}
+a{
+    text-align: center;
+    text-decoration: none;
+
+}
+
+h1:hover{
+    text-decoration: underline;
+    color: #000;
 }
