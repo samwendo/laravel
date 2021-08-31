@@ -1,0 +1,12 @@
+body
+{
+    background: linear-gradient(#e66465, #9198e5);
+    color: #00539CFF;
+    max-width: 720px;
+    margin: auto;
+    font-family: sans-serif;
+}
+
+article + article{
+    border-top: 2px solid #cdd;
+}
