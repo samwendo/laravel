@@ -24,7 +24,20 @@ a{
 
 }
 
-h1:hover{
+a:hover{
     text-decoration: underline;
     color: #000;
+}
+
+.post-excerpt
+{
+    font-size: 1.2em;
+    font-weight: 400;
+    font-style: oblique;
+}
+
+.post-date{
+    color: rgb(25, 238, 220);
+    font-size: 1.1em;
+    font-family: cursive;
 }

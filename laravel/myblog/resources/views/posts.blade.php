@@ -1,22 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/assets/css/posts.css">
 
-    <title>Document</title>
-</head>
-<body>
-<article>
-@foreach ($posts as $post )
+    {{-- @extends('layout')
+
+    @section('content') --}}
+
+    <x-layout>
+
+        <x-slot name="content">
 
 
-     {!! $post !!}
+    <article>
+
+    @foreach ($posts as $post)
+         <h1>
+             <a href="/posts/{{$post->id}}">
+            {{{$post->title}}}
+            </a>
+         </h1>
+         <div>
+             <p class="post-excerpt">
+                 {{$post->excerpt}}
+             </p>
+
+             <p class="post-date">
+               Published on:  {{ date('l jS \of F Y h:i:s A',
+                    $post->published_date) }}
+             </p>
+         </div>
+    @endforeach
+
+    </article>
+</x-slot>
+</x-layout>
+
+{{-- @endsection
 
 
-@endforeach
-</article>
-</body>
-</html>
+@section('header') --}}
+
+

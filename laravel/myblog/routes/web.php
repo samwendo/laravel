@@ -1,7 +1,11 @@
 <?php
 
+use App\Models\Post;
+use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
+use Spatie\YamlFrontMatter\YamlFrontMatter;
+use Symfony\Component\Translation\Loader\YamlFileLoader;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,34 +19,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-
-$files = File::files (resource_path("posts/"));
-
-$posts = [];
-
-// foreach($files as $file){
-//     $posts[] = file_get_contents($file);
-// }
-
-$posts = collect($files)->map(function($file){
-    return file_get_contents($file);
-});
-// ddd($posts);
-    return view('posts', [
-        "posts" => $posts
-
+    return view("posts",[
+        'posts' => Post::all()
     ]);
+    // $file = resource_path("post/1.html");
+
+    // $document = YamlFrontMatter::parseFile($file);
+    // ddd($document);
+
+ // ddd($posts);
+    // return view('posts', [
+    //     "posts" => Post::all()
+    // ]);
 });
 
 
-Route::get('/posts/{id}',function($id){
-    $post = file_get_contents(
-        resource_path("posts/{$id}.html")
-    );
-    return view("post",
-['post'=>$post]
-);
+Route::get("/posts/{id}", function($id){
+    
 
-    // return view("posts");
+    return view("post",[
+        'post' => Post::find($id)
+    ]);
+
+//   return !$post? abort(404): $post;
 });
-
