@@ -15,7 +15,7 @@
     </h1>
     <div>
         <p class="post-body">
-            {!! $post->body() !!}
+            {!! $post->body!!}
         </p>
 
         <p class="post-date">
